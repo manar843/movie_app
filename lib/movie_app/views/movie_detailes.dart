@@ -10,9 +10,9 @@ class MovieDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizeScreen = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-       // iconTheme: IconThemeData(color: Colors.white),
           title: Text(movie.title ?? "No title" )),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
@@ -20,10 +20,8 @@ class MovieDetailsScreen extends StatelessWidget {
          children: [
            Image.network("https://image.tmdb.org/t/p/w500${movie.posterPath}"),
            Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
              children: [
-
-               SizedBox(height: 508),
+               SizedBox(height: sizeScreen.height*.6),
                Container(
                  padding: EdgeInsets.all(22),
                  decoration: BoxDecoration(
